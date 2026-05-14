@@ -1,7 +1,8 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { UserProfile, StartupIdea, BusinessPlan, MVPRoadmap, PitchDeckSlide } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY || "";
+const ai = new GoogleGenAI({ apiKey });
 
 export const generateStartupIdeas = async (profile: UserProfile): Promise<StartupIdea[]> => {
   const prompt = `Based on the following user profile, generate 3-5 innovative startup ideas.
