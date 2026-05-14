@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Analytics } from '@vercel/analytics/react';
 import { 
   Rocket, 
   Brain, 
@@ -24,6 +25,7 @@ import {
   X,
   User
 } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { generateStartupIdeas, generateBusinessPlan, generateMVPRoadmap, generatePitchDeck } from './services/geminiService';
 import { UserProfile, StartupIdea, BusinessPlan, MVPRoadmap, PitchDeckSlide } from './types';
 
@@ -942,6 +944,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
