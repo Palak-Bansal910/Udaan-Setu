@@ -25,6 +25,7 @@ import {
   X,
   User
 } from 'lucide-react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { generateStartupIdeas, generateBusinessPlan, generateMVPRoadmap, generatePitchDeck } from './services/geminiService';
 import { UserProfile, StartupIdea, BusinessPlan, MVPRoadmap, PitchDeckSlide } from './types';
 
